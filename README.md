@@ -26,4 +26,3 @@ Space Subdivision in E2 https://arxiv.org/pdf/1708.02758.pdf
  - https://neo4j.com/developer/apache-spark/
  - https://spark.apache.org/docs/latest/graphx-programming-guide.html#pregel-api 
    "At a high level the Pregel operator in GraphX is a bulk-synchronous parallel messaging abstraction constrained to the topology of the graph. The Pregel operator executes in a series of super steps in which vertices receive the sum of their inbound messages from the previous super step,..."  
- 
