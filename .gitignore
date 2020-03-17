@@ -1,3 +1,8 @@
+## Local folders
+
+docker/data/hdfs
+docker/data/zookeeper
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,50 @@
+version: '2'
+services:
+    notebook:
+        image:  dsk/scipy-notebook:latest
+        environment:
+         HADOOP_MASTER_ADDRESS: hdfs-name 
+         ZOOKEEPERS: zookeeper
+         # Next setting ref: https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html  
+         # CHOWN_HOME: 'yes'
+         # CHOWN_HOME_OPTS: -R
+         # CHOWN_EXTRA: /data
+         # CHOWN_EXTRA_OPTS: -R
+         # GRANT_SUDO: yes
+         H5PY_DEFAULT_READONLY: 1 
+        ports:
+         - 8888:8888
+         - 4040:4040
+         - 4041:4041
+        volumes:
+         - ./demo-data:/demo-data
+         - ./fs/home/jovyan/DEMO:/home/jovyan/DEMO
+        depends_on:
+         - zookeeper
+         - hdfs-name
+         - hdfs-data
+    hdfs-name:
+        image: quay.io/geomesa/hdfs:geomesa-2.2.1-accumulo-1.9.2
+        command: name
+        environment:
+          HADOOP_MASTER_ADDRESS: hdfs-name
+        ports:
+          - 50070:50070
+        volumes:
+         - ./data/hdfs:/data/hdfs   
+    hdfs-data:
+        image: quay.io/geomesa/hdfs:geomesa-2.2.1-accumulo-1.9.2
+        command: data
+        environment:
+          HADOOP_MASTER_ADDRESS: hdfs-name
+        depends_on:
+          - hdfs-name
+        volumes:
+         - ./data/hdfs:/data/hdfs   
+    zookeeper:
+        image: quay.io/geomesa/zookeeper:latest
+        ports:
+          - 2181:2181
+        volumes:        
+         - ./data/hdfs:/data/hdfs
+         - ./data/zookeeper:/data/zookeeper
