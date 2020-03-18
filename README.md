@@ -16,7 +16,7 @@ ref:
 Space Subdivision in E2 https://arxiv.org/pdf/1708.02758.pdf
  - https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/
  - https://www.geomesa.org/assets/outreach/SpatioTemporalIndexing_IEEEcopyright.pdf
- - sa.org/documentation/user/spark/spark_jts.html demonstrates use of geomesa in Spark using dataframes & CSV only.
+ - https://www.geomesa.org/documentation/user/spark/spark_jts.html demonstrates use of geomesa in Spark using dataframes & CSV only.
 
 ## 2) Modelling
 
