@@ -1,13 +1,13 @@
 version: '2'
 services:
     notebook:
-        image:  dsk/scipy-notebook:latest
+        image:  d0s0k/scipy-notebook:latest
         environment:
          HADOOP_MASTER_ADDRESS: hdfs-name 
          ZOOKEEPERS: zookeeper
          # Next setting ref: https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html  
-         # CHOWN_HOME: 'yes'
-         # CHOWN_HOME_OPTS: -R
+         CHOWN_HOME: 'yes'
+         CHOWN_HOME_OPTS: -R
          # CHOWN_EXTRA: /data
          # CHOWN_EXTRA_OPTS: -R
          # GRANT_SUDO: yes
@@ -17,7 +17,7 @@ services:
          - 4040:4040
          - 4041:4041
         volumes:
-         - ./demo-data:/demo-data
+         - ../geodata:/geodata
          - ./fs/home/jovyan/DEMO:/home/jovyan/DEMO
         depends_on:
          - zookeeper
