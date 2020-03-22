@@ -26,3 +26,30 @@ Modelling the spread of fire over time and eventual fuel exhaustion could be wel
  - https://neo4j.com/developer/apache-spark/
  - https://spark.apache.org/docs/latest/graphx-programming-guide.html#pregel-api 
    "At a high level the Pregel operator in GraphX is a bulk-synchronous parallel messaging abstraction constrained to the topology of the graph. The Pregel operator executes in a series of super steps in which vertices receive the sum of their inbound messages from the previous super step,..."  
+
+# Getteging started
+
+
+### Pre-requisites:
+
+ - You must have a workgin docker installation
+ - Some notebooks need larger input datasets (shapefiles). These should be copied into the geodata folder.
+
+### Startup
+ - Open a terminal and cd into the ```docker``` folder
+ - run ```docker-compose up -d``` from the docker folder
+ - run ```docker-compose logs notebook``` and cut-n-paste the URL 
+   e.g. http://127.0.0.1:8888/?token=**********
+ - opemn the URL in your brower and open the DEMO folder.
+
+Youre in, try out the notebooks yourself.
+
+### Usage
+
+ - Notice that docker-compose is running 4 containers. To shutdown all together, just run ```docker-compose down```
+ - Any changes or new notebooks will be saved to the host filesystem in docker/fs/home/jovyan. You may check this in to the git repo is you want to share them.
+
+
+
+
+
