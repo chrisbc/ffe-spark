@@ -4,6 +4,8 @@ docker/data/hdfs
 docker/data/zookeeper
 **/metastore_db/**
 **/geodata/buildings_raw.*
+**/geodata/*.parquet
+*.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
